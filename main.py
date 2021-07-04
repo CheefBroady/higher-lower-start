@@ -1,6 +1,6 @@
 import art
 import game_data
-import clear
+from replit import clear
 from random import randint
 
 print(art.logo)
@@ -22,10 +22,9 @@ def show_variante(my_list):
   my_list.append(idx)
   return idx
 
-'''
-Gewinn Meldung
-'''
+
 def you_win():
+  """Gewinn Meldung"""
   print("\n***************************************")
   print("**********You Win, Next Round**********")
   print("***************************************\n")
@@ -53,6 +52,7 @@ def program():
     print(f"\nIs '{game_data.data[idx_B]['name']}' follower count higher or lower than '{game_data.data[idx_B]['name']}'?")
     decission = input(f"\nChoose 'H' for 'Higher' or 'L' for 'Lower'\n")
     idx_A = idx_B
+    clear()
     if decission == 'H' and B > A:
       counter += 1
       you_win()
@@ -61,8 +61,7 @@ def program():
       you_win()
     else:
       play_again = False
-      print(f"You lose. Your score = {counter}")
-    
+      print(f"You lose. Your score = {counter}")  
 
 
   
